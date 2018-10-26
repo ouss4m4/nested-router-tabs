@@ -14,9 +14,9 @@ export class TabsComponent implements OnInit {
     private routerExtensions: RouterExtensions
   ) {}
   ngOnInit() {
-    setTimeout(() => {
-      console.log("---------- url : " + this.router.url);
-    }, 1250);
+    setInterval(() => {
+      console.log(" tabsLog ---------- url : " + this.router.url);
+    }, 15000);
     this.routerExtensions.navigate(
       [{ outlets: { firstOutlet: ["first"], secondOutlet: ["second"] } }],
       {

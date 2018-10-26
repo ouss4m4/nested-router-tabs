@@ -25,9 +25,19 @@ export class FirstComponent implements OnInit {
   }
 
   onItemTap(event: any) {
-    this.routerExtensions.navigateByUrl(
-      "/tabs/(firstOutlet:2//secondOutlet:second)"
+    //this Work but doesn't allow the use of back button
+    this.routerExtensions.navigate([
+      "tabs",
+      { outlets: { firstOutlet: ["first", "main", "7"] } }
+    ]);
+
+    /*  @todo: add relativeTo 
+   this.routerExtensions.navigate(
+      [{ outlets: { firstOutlet: ["first", "main", "7"] } }],
+      { relativeTo: this.activatedRoute }
     );
+    
+    */
   }
   loadItems() {
     for (let i = 0; i < 20; i++) {

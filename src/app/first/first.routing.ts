@@ -5,9 +5,17 @@ import { FirstComponent } from "./first.component";
 import { FirstDetailsComponent } from "./firstDetails.component";
 
 const routes: Routes = [
-  { path: "", component: FirstComponent },
+  { path: "", redirectTo: "main", pathMatch: "full" },
+  ////before i implemented lazy loading ,  the back button worked 
+  
   {
-    path: "/:id",
+    path: "main",
+    component: FirstComponent
+  },
+  //i couldn't activate the /:id route, while it was a child of path
+  // try it , i couldn't Route to it
+  {
+    path: "main/:id",
     component: FirstDetailsComponent
   }
 ];

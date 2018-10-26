@@ -14,6 +14,7 @@ export class LoginComponent {
     private activatedRouter: ActivatedRoute
   ) {}
   login() {
+    // @todo : check why Djenkov uses [nsrouterlinks] & activate outlets & it worked
     this.routerExtensions.navigate(["tabs"]);
   }
 }

@@ -1,19 +1,27 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
+import { RouterExtensions } from "nativescript-angular";
 
 @Component({
   moduleId: module.id,
   selector: "app-first-details",
-  template: `
-    <StackLayout>
-      <Label text="item "></Label>
-    </StackLayout>
-  `
+  templateUrl: "firstDetails.component.html"
 })
 export class FirstDetailsComponent implements OnInit {
-  public id = this.activatedRoute.snapshot.params.id;
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private routerExtensions: RouterExtensions
+  ) {}
   ngOnInit() {
-    console.log("details url : " + this.router.url);
+    console.log("FirstDetails url : ");
+  }
+  public goBack() {
+    this.routerExtensions.back();
+  }
+  public canGoBack() {
+    alert(this.routerExtensions.canGoBack());
+  }
+  public canGoBackPrevious() {
+    alert(this.routerExtensions.canGoBackToPreviousPage());
   }
 }

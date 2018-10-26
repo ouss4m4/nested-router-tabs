@@ -10,6 +10,7 @@ const routes: Routes = [
     path: "tabs",
     component: TabsComponent,
     children: [
+      //i used loadchildre,  cuz  'path#name" didn't work for me
       { path: "first", loadChildren: () => FirstModule, outlet: "firstOutlet" },
       { path: "second", component: SecondComponent, outlet: "secondOutlet" }
     ]
