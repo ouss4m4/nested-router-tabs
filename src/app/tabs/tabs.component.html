@@ -1,0 +1,16 @@
+<ActionBar title="Tabs" icon="" class="action-bar">
+</ActionBar>
+<StackLayout>
+
+</StackLayout>
+
+<TabView androidTabsPosition="bottom">
+    <StackLayout *tabItem="{title: 'First Tab', iconSource: 'res://icon'}">
+        <page-router-outlet name="firstOutlet"></page-router-outlet>
+
+    </StackLayout>
+    <StackLayout *tabItem="{title: 'Second Tab', iconSource: 'res://icon'}">
+        <page-router-outlet name="secondOutlet"></page-router-outlet>
+
+    </StackLayout>
+</TabView>

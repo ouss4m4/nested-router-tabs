@@ -1,0 +1,11 @@
+<ActionBar title="First Component" icon="" class="action-bar">
+</ActionBar>
+
+<ListView [items]="items" class="list-group" >
+    <ng-template let-item="item" let-odd="odd" let-even="even">
+        <StackLayout>
+            <Label [text]="item.title" class="list-group-item" (tap)="onItemTap(item.id)"> </Label>
+
+        </StackLayout>
+    </ng-template>
+</ListView>
